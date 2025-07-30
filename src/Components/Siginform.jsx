@@ -1,8 +1,13 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { SigninFormHelper } from "../helpers/SigninFormHelper";
+import { useDispatch } from "react-redux";
 
 export const Siginform = () => {
   const [isSignin, setIsSignin] = React.useState(true);
+
+  //dispatch
+  const dispatch = useDispatch();
 
   const {
     register,
@@ -12,7 +17,7 @@ export const Siginform = () => {
 
   return (
     <form
-      onSubmit={handleSubmit((data) => console.log(data))}
+      onSubmit={handleSubmit((data) => SigninFormHelper(data, isSignin,dispatch))}
       className="p-10 max-w-[400px] bg-black/70 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded w-full"
     >
       <h1 className="text-3xl text-white font-bold mb-2 tracking-wide">
@@ -39,6 +44,7 @@ export const Siginform = () => {
             type="password"
             placeholder="Password"
             className="p-3 my-2 w-full bg-gray-600 rounded"
+            autoComplete="off"
             {...register("password", {
               required: "Password is required",
               pattern: {

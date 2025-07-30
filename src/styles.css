@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+.poupup{
+    position: fixed;
+    bottom:10px;
+    left: 50%;
+    transform: translate(-50%);
+    transition: all 0.5s ease-in-out;
+}
+.poupup-hidden{
+    bottom: -100px;
+}
