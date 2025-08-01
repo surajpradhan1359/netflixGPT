@@ -5,12 +5,11 @@ import { emailVerified } from "../features/auth/authSlice";
 import { useNavigate } from "react-router";
 
 export const EmailVerificationNotice = () => {
-
+  //isVerified from redux
   let isVerified = useSelector((state) => state.auth.user?.isVerified);
-
   //navigate
   const navigate = useNavigate();
-
+  //dispatch
   const dispatch = useDispatch();
   //useEffect for checking email verification
   useEffect(() => {
