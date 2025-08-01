@@ -12,14 +12,13 @@ export const Popup = () => {
   //useEffect for closing the popup
   useEffect(() => {
     setTimeout(() => {
-    console.log("closing popup");
       dispatch(closePopup());
     }, 2000);
   }, [isOpen]);
 
   return (
-    <div className={`p-4 bg-black/80 poupup ${isOpen ?"":"poupup-hidden"}`}>
-      <h1 className="text-xl text-center text-red-400 tracking-wide">{content}</h1>
+    <div className={`p-4 bg-red-500 poupup ${isOpen ?"":"poupup-hidden"}`}>
+      <h1 className="text-xl text-center text-black tracking-wide">{content}</h1>
     </div>
   );
 };

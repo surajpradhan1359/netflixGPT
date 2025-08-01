@@ -11,21 +11,24 @@ export const SigninFormHelper = async (data, isSignin, dispatch) => {
   let { email, password } = data;
   try {
     if (isSignin) {
-      console.log("Signing in user...");
+      //signin
       const userCredential = await signInWithEmailAndPassword(
         auth,
         email,
         password
       );
+      //getting the user
       const user = userCredential.user;
-
-      if(user){
-        dispatch(login(user.uid));
+      //if user is signed in
+      if (user) {
+        dispatch(login({
+          email: user.email,
+          uid: user.uid,
+          isVerified: user.emailVerified,
+          photoURL: user.photoURL
+        }));
         dispatch(openPopup("successfully signed in"));
       }
-
-      console.log("Signed in user:", user.uid);
-      console.log("Email verified:", user.emailVerified);
     } else {
       // Step 1: Create user
       const userCredential = await createUserWithEmailAndPassword(
@@ -33,14 +36,16 @@ export const SigninFormHelper = async (data, isSignin, dispatch) => {
         email,
         password
       );
+      //getting the user
       const user = userCredential.user;
-      if(user){
+      //sending verification email
+      const verifyEmail = await sendEmailVerification(user);
+      //popup redux state change
+      if (user) {
         dispatch(openPopup("successfully signed up"));
       }
-      console.log(user);
     }
   } catch (error) {
-    console.log(error.code);
     dispatch(openPopup(error.code));
   }
 };

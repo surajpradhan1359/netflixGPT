@@ -6,21 +6,22 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { Popup } from "./Components/popup";
+import { EmailVerificationNotice } from "./Components/EmailVerificationNotice";
+import Brwose, { Browse } from "./Components/Browse";
 
 const Root = () => {
-  //getting the auth 
-  let authFlag =  useSelector((state) => state.auth.user);
+  //getting the auth
+  let authFlag = useSelector((state) => state.auth.user);
   //navigate
   const navigate = useNavigate();
 
-  useEffect(()=>{
-    console.log(authFlag);
-    if(authFlag){
-      navigate("/browse")
-    }else{
-      navigate("/signin")
+  useEffect(() => {
+    if (authFlag) {
+      navigate("/browse");
+    } else {
+      navigate("/signin");
     }
-  },[authFlag]);
+  }, [authFlag]);
 
   return (
     <div>
@@ -38,12 +39,16 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "browse",
-        element: <h1>Browse page</h1>,
+        element: <Browse />,
       },
       {
         path: "signin",
         element: <Form />,
       },
     ],
+  },
+  {
+    path: "verifyemail",
+    element: <EmailVerificationNotice />,
   },
 ]);
