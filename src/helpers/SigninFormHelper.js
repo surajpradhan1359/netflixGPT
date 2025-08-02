@@ -21,12 +21,6 @@ export const SigninFormHelper = async (data, isSignin, dispatch) => {
       const user = userCredential.user;
       //if user is signed in
       if (user) {
-        dispatch(login({
-          email: user.email,
-          uid: user.uid,
-          isVerified: user.emailVerified,
-          photoURL: user.photoURL
-        }));
         dispatch(openPopup("successfully signed in"));
       }
     } else {

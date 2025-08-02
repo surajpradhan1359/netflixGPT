@@ -5,10 +5,6 @@ import { emailVerified } from "../features/auth/authSlice";
 import { useNavigate } from "react-router";
 
 export const EmailVerificationNotice = () => {
-  //isVerified from redux
-  let isVerified = useSelector((state) => state.auth.user?.isVerified);
-  //navigate
-  const navigate = useNavigate();
   //dispatch
   const dispatch = useDispatch();
   //useEffect for checking email verification
@@ -28,19 +24,14 @@ export const EmailVerificationNotice = () => {
             })
           );
           clearInterval(timer);
+        }else{
+          console.log(false)
         }
       }
     }, 2000);
     //clear interval
     return () => clearInterval(timer);
   }, []);
-
-  //useEffect for navigation()
-  useEffect(() => {
-    if(isVerified){
-      navigate("/browse")
-    }
-  }, [isVerified]);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
