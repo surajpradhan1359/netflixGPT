@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { use, useEffect } from "react";
 import { auth } from "../firebase/firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { emailVerified } from "../features/auth/authSlice";
@@ -24,8 +24,8 @@ export const EmailVerificationNotice = () => {
             })
           );
           clearInterval(timer);
-        }else{
-          console.log(false)
+        } else {
+          console.log(false);
         }
       }
     }, 2000);
@@ -35,6 +35,7 @@ export const EmailVerificationNotice = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+      {console.log("emailVerified")}
       <div className="bg-white shadow-md rounded-2xl p-8 max-w-md w-full text-center">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">
           Verify Your Email

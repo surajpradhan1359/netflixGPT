@@ -10,6 +10,7 @@ export const Browse = () => {
   const isVerified = useSelector((state) => state.auth.user?.isVerified);
   return (
     <div>
+      {console.log("browse",isVerified)}
       {isVerified ? (
         <div className="w-full h-screen bg-black text-red text-2xl text-center">
           Browse

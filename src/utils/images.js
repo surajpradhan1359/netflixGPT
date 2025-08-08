@@ -1,0 +1,1 @@
+export const userAvtar =  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqDyGHNTY7xenH99DkVWJBuwe8AkxcVYqyOw&s"
