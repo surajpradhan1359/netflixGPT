@@ -13,8 +13,6 @@ export const RootLayout = () => {
   const uid = useSelector((state) => state.auth.user?.uid);
 
   useEffect(() => {
-    console.log("✅ RootLayout mounted");
-
     if (!uid) {
       navigate("/signin");
     } else {

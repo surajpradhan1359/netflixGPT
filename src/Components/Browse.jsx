@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { EmailVerificationNotice } from "./EmailVerificationNotice";
+import { Body } from "./Body";
 
 export const Browse = () => {
   //navigate
@@ -10,11 +11,8 @@ export const Browse = () => {
   const isVerified = useSelector((state) => state.auth.user?.isVerified);
   return (
     <div>
-      {console.log("browse",isVerified)}
       {isVerified ? (
-        <div className="w-full h-screen bg-black text-red text-2xl text-center">
-          Browse
-        </div>
+        <Body />
       ) : (
        <EmailVerificationNotice />
       )}

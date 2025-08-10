@@ -4,6 +4,7 @@ import { EmailVerificationNotice } from "./Components/EmailVerificationNotice";
 import { Browse } from "./Components/Browse";
 import { Userinfo } from "./Components/Userinfo.jsx";
 import { RootLayout } from "./Components/RootLayout";
+import { Loader } from "./Components/Loader.jsx";
 
 
 export const router = createBrowserRouter([
