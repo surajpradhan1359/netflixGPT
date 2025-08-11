@@ -17,7 +17,7 @@ export const Primary = () => {
           <Bgvideo id={data.id} />
         </div>
       ) : (
-        <Loader />
+        <Loader minheight={"h-screen"} />
       )}
     </div>
   );

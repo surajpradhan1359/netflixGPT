@@ -16,7 +16,7 @@ export const Header = () => {
   const email = useSelector((state) => state.auth.user?.email);
 
   return (
-    <div className="flex justify-between items-center max-w-[1400px] mx-auto fixed top-0 left-0 right-0 z-50 w-full">
+    <div className="flex justify-between items-center max-w-[1400px] mx-auto fixed top-0 left-0 right-0 z-50">
       <img className="w-42" src={netflixLogo} alt="noImage" />
       <div className="cursor-pointer relative">
         <Account setClick={setIsClick}/>

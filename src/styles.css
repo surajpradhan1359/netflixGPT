@@ -10,3 +10,18 @@
 .poupup-hidden{
     bottom: -100px;
 }
+
+/* Chrome, Safari, Edge */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+.hide-scrollbar {
+  scrollbar-width: none; /* hides scrollbar */
+}
+
+/* Internet Explorer & old Edge */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* hides scrollbar */
+}
