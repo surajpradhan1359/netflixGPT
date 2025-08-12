@@ -7,7 +7,7 @@ export const Netflixbgimage = () => {
       <img
         src={netflixBgImage}
         alt="Background"
-        className="w-full h-full object-cover"
+        className="w-full h-screen object-cover  hidden sm:inline-block"
       />
       <div className="absolute inset-0 bg-black/50"></div>
     </div>

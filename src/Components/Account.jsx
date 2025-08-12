@@ -7,13 +7,13 @@ export const Account = ({ setClick }) => {
   return (
     <div onClick={() => setClick((prev) => !prev)}>
       {photoURL ? (
-        <img src={photoURL} className="w-10 h-10 rounded-full" />
+        <img src={photoURL} className="size-8 sm:size-10 mr-2 sm:mr-0 rounded-full" />
       ) : (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
-          className="size-10 text-red-600"
+          className="size-8 sm:size-10 text-red-600"
         >
           <path
             fillRule="evenodd"

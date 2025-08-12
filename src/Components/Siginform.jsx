@@ -17,10 +17,12 @@ export const Siginform = () => {
 
   return (
     <form
-      onSubmit={handleSubmit((data) => SigninFormHelper(data, isSignin,dispatch))}
-      className="p-10 max-w-[400px] bg-black/70 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded w-full"
+      onSubmit={handleSubmit((data) =>
+        SigninFormHelper(data, isSignin, dispatch)
+      )}
+      className="p-4 sm:p-10 h-screen sm:h-auto  md:max-w-[400px] bg-black sm:bg-black/70 relative sm:absolute sm:top-1/4 sm:left-1/2 transform sm:-translate-x-1/2 s,:-translate-y-1/2 rounded w-full"
     >
-      <h1 className="text-3xl text-white font-bold mb-2 tracking-wide">
+      <h1 className="text-3xl text-white font-bold mb-2 tracking-wide md:text-2xl md:mt-0 mt-16">
         {isSignin ? "Sign In" : "Sign Up"}
       </h1>
       <div>

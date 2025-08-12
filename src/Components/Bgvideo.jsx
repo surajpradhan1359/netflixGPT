@@ -12,7 +12,7 @@ export const Bgvideo = ({ id }) => {
   return (
     <>
       {trailerID ? (
-        <div className="w-full aspect-video relative">
+        <div className="w-full aspect-[4/5] md:aspect-video relative">
           <div className="bg-black/40 absolute inset-0 z-10"></div>
           <iframe
             className="w-full h-full"

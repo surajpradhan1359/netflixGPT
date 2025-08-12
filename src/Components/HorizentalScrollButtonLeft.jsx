@@ -3,7 +3,7 @@ import React from "react";
 export const HorizentalScrollButtonLeft = ({ containerRef }) => {
   return (
     <div
-      className="bg-black absolute top-1/2 transform -translate-y-1/2 -left-6 p-2 rounded-full"
+      className="bg-slate-300 absolute top-1/2 transform -translate-y-1/2 xl:-left-6 p-2 rounded-full"
       onClick={() => {
         console.log("scrolling");
         containerRef.current.scrollTo({
@@ -16,7 +16,7 @@ export const HorizentalScrollButtonLeft = ({ containerRef }) => {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
-        className="size-8 text-white cursor-pointer font-bold"
+        className="size-4 sm:size-8 text-black cursor-pointer font-bold"
       >
         <path
           fillRule="evenodd"

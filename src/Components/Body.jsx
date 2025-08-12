@@ -21,12 +21,9 @@ export const Body = () => {
   }, []);
 
   return (
-    <div>
-      <div className="relative">
-        <Primary />
-        <Secondary />
-      </div>
-      <div className="bg-black h-[700px]"></div>
+    <div className="relative">
+      <Primary />
+      <Secondary />
     </div>
   );
 };

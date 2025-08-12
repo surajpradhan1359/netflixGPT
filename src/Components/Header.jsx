@@ -17,7 +17,7 @@ export const Header = () => {
 
   return (
     <div className="flex justify-between items-center max-w-[1400px] mx-auto fixed top-0 left-0 right-0 z-50">
-      <img className="w-42" src={netflixLogo} alt="noImage" />
+      <img className="w-32 sm:w-42" src={netflixLogo} alt="noImage" />
       <div className="cursor-pointer relative">
         <Account setClick={setIsClick}/>
         <Dropdown isClick={isClick} dispatch={dispatch} email={email} />
