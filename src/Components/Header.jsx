@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { netflixLogo } from "../utils/formUtils";
 import { useDispatch, useSelector } from "react-redux";
 import { signOut } from "firebase/auth";
@@ -15,8 +15,18 @@ export const Header = () => {
   //email from redux
   const email = useSelector((state) => state.auth.user?.email);
 
+  useEffect(()=>{
+    let timerID;
+    if(isClick){
+       timerID = setTimeout(() => {
+        setIsClick(false);
+      },5000)
+    }
+    return () => clearTimeout(timerID);
+  },[isClick])
+
   return (
-    <div className="flex justify-between items-center max-w-[1400px] mx-auto fixed top-0 left-0 right-0 z-50">
+    <div className="flex justify-between items-center px-2 sm:px-10 fixed top-0 left-0 right-0 z-50">
       <img className="w-32 sm:w-42" src={netflixLogo} alt="noImage" />
       <div className="cursor-pointer relative">
         <Account setClick={setIsClick}/>
@@ -39,21 +49,21 @@ const Dropdown = ({ isClick, dispatch, email }) => {
   };
   return (
     <div
-      className={`bg-red-600 p-4 absolute w-[200px] right-0 ${
+      className={`bg-red-500 p-4 absolute w-[200px] right-0 bottom-[-180px] ${
         isClick ? "block" : "hidden"
       }`}
     >
-      <p className="text-xl text-center mb-2 text-white">
+      <p className="text-xl text-center  text-black hover:text-white">
         {email ? email.slice(0, 15) : "Guest"}
       </p>
-      <p className="text-xl text-center mb-2 text-white">
+      <p className="text-xl text-center mb-2  text-black hover:text-white">
         {name ? name.slice(0, 15) : "Username"}
       </p>
-      <p className="text-xl text-center mb-2 text-white">
+      <p className="text-xl text-center mb-2  text-black hover:text-white">
         <Link to="/userinfo">Update User</Link>
       </p>
       <p
-        className="text-xl text-center mb-2 text-white"
+        className="text-xl text-center mb-2  text-black hover:text-white"
         onClick={handleLogout}
       >
         Logout
