@@ -57,3 +57,19 @@ export const fetchUpcomingMovies = async (dispatch) => {
     console.log(err);
   }
 };
+
+
+export const fetchVideoID = async(movie_id,setTrailerID) =>{
+  try {
+    let movieID = String(movie_id).trim();
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${movieID}/videos?language=en-US`, option);
+    const data = await response.json();
+    let trailers = data.results.filter(
+      (video) => video.type === "Trailer"
+    );
+    console.log(trailers);
+    setTrailerID(trailers[0].key);
+  } catch (err) {
+    console.log(err);
+  }
+}

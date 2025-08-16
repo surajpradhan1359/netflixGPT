@@ -5,12 +5,12 @@ import { Browse } from "./Components/Browse";
 import { Userinfo } from "./Components/Userinfo.jsx";
 import { RootLayout } from "./Components/RootLayout";
 import { Loader } from "./Components/Loader.jsx";
-
+import { Playtrailer } from "./Components/Playtrailer.jsx";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <RootLayout/>,
+    element: <RootLayout />,
     children: [
       {
         path: "browse",
@@ -25,5 +25,9 @@ export const router = createBrowserRouter([
         element: <Userinfo />,
       },
     ],
-  }
+  },
+  {
+    path: "movie/:id",
+    element: <Playtrailer />,
+  },
 ]);
